@@ -1,0 +1,324 @@
+CRUD de capacitadores
+	Nombre
+	Direccion
+	Telefono
+	Celular
+	Nit
+	Correo
+	Pagina web
+	Redessociles
+		Nombre
+		Tipo
+		Url
+	curso
+		Descripcion
+		precio
+	
+	
+curso
+	Nombre
+	Descripcion
+	Horario
+	Duracion
+	sesiones
+	costo
+	Contenido
+		Nombre
+		Tipo texto, video, etc
+		Descripcion
+		Orden
+		
+Capacitacion
+	Nombre
+	Curso[]
+	Fecha1
+	Fecha2
+	Fecha3
+	status
+	Realizacion (date)
+	Cancelacion (date)
+	Minimo
+	Maximo
+	Precio
+	Capacitador[]
+	Precio final registro
+	Participante[]
+	Detalleprecio
+		Cantidad participanes
+		Precio
+		Fecha
+		Status (cancelo)
+	Calificacion
+		Pregunta
+		Orden
+		Calificacion minima
+		Calificacion maxima
+	
+Participante
+	Nombre
+	nombrefacturacion
+	Direccion
+	Telefono
+	Email
+	Nit
+	Tajeta
+	Fecha_registro
+	Fecha_cobro
+	Fecha_cancelacion
+	Estado pago
+	Capacitacion[]
+	
+Calificacion
+	Capacitacionid
+	Participante
+	Observaciones generales
+	Fecha
+	respuestas
+		Orden
+		Preguntaid
+		Respuesta
+		Calificacion entre minima y maxima
+	
+Menu 
+	Nombre
+	Link
+	Padre
+	Icono
+	Status
+	Publico
+	
+Pagina
+	Nombre
+	Contenido
+	Menuid
+	Fecha publicacion
+	Fecha cancelarion
+	status
+	
+Soporte
+	Fecha
+	Participante nombre
+	Email
+	Telefono
+	Detalle de solicitud
+	Padre
+	Fecha resolucion
+	
+	
+	Pantallas Privadas
+		Captura de capacitadors
+		Captura de cursos
+		Captura de contenido
+		
+		Creacion de curso
+		Tablero de control de cursos activos
+		Reporte de calificacion
+		
+		Cancelacion de capacitacion
+		Re-agendar una capacitacion
+		Cerrar capacitaciòn
+		participantes
+		
+		Generacion de cobros y facturacion
+		Reporte de cobros
+		
+		Atencion soporte
+	
+	Pantallas publicas
+		Opciones del web (acerca de, que es, como, cursos disponibles, etc)
+		Presentacion de capacitacion mas proxima
+		Presentacion de participantes
+		Detalle de capacitacion
+		Solicitud de soporte
+		Registro
+		Cancelacion de registro
+		
+		Compartir
+		
+		Soporte tecnico
+		
+		
+	
+	
+	Debe tener captura los capcitadores, cursos y detalle
+	
+	Cuando hay un nuevo curso lo crea con los datos del capacitador y el curso, puede cambiar nombre y el detalle lo toma del curso,  importante le fecha
+	
+	Dashboard de como van los cursos, inscritos, c uanto falta, cuantos han dicho que no
+	
+	
+	
+	[20:54, 26/5/2020] Jaime Sandoval: va
+	[20:54, 26/5/2020] Jaime Sandoval: mia pues, solo tiene algo complicado
+	[20:54, 26/5/2020] Jaime Sandoval: lo demas es presentar
+	[20:54, 26/5/2020] Jaime Sandoval: tiene un listado de instructores o conferencistas
+	[20:54, 26/5/2020] Jaime Sandoval: con que da cada uno
+	[20:55, 26/5/2020] Jaime Sandoval: arma un curso, pone la fecha y lo principal es que le pone un valor y cantidad minima de participantes
+	[20:55, 26/5/2020] Jaime Sandoval: ahhh y fecha del evento
+	[20:55, 26/5/2020] Jaime Sandoval: eso es lo principal
+	[20:56, 26/5/2020] Jaime Sandoval: luego le amarra el instructor y el contenido, que pueda ya tenerlo de otros eventos similares
+	[20:56, 26/5/2020] Jaime Sandoval: los demas datos no son del todo importantes, pero si necesarios
+	[20:56, 26/5/2020] Luis Pirir: Eso vi, lo de los asientos, vi que es lineal
+	[20:56, 26/5/2020] Jaime Sandoval: no, no te hagas esa idea
+	[20:56, 26/5/2020] Jaime Sandoval: ya te explico
+	[20:56, 26/5/2020] Luis Pirir: o sea, que no se debe asignar butaca ni nada por el estilo
+	[20:57, 26/5/2020] Jaime Sandoval: eso esta de lo mas facil
+	[20:57, 26/5/2020] Jaime Sandoval: nop
+	[20:57, 26/5/2020] Jaime Sandoval: en la pantalla principal tiene un carusel de cursos que estan activos
+	[20:57, 26/5/2020] Jaime Sandoval: el orden que aparecen es primero el pronto a vences
+	[20:57, 26/5/2020] Jaime Sandoval: es decir por fecha
+	[20:58, 26/5/2020] Jaime Sandoval: si te das cuenta arriba es solo contador de tiempo faltante
+	[20:58, 26/5/2020] Jaime Sandoval: en medio va la info del curso
+	[20:58, 26/5/2020] Jaime Sandoval: dejo pendiente el valor
+	[20:58, 26/5/2020] Jaime Sandoval: luego las personas
+	[20:58, 26/5/2020] Jaime Sandoval: blanco es el cupo para llegar al maximo
+	[20:58, 26/5/2020] Jaime Sandoval: (eso lo dice el instructor)
+	[20:59, 26/5/2020] Jaime Sandoval: verde es el que ya esta inscrito/registrado
+	[20:59, 26/5/2020] Luis Pirir: nítido
+	[20:59, 26/5/2020] Jaime Sandoval: amarillo el que dijo que ya no
+	[20:59, 26/5/2020] Jaime Sandoval: se registra a ese curso y le pide datos personales y datos de facturacion
+	[20:59, 26/5/2020] Jaime Sandoval: es decir tarjeta para pago
+	[21:00, 26/5/2020] Jaime Sandoval: puede decir que ya no va a participar con un tiempo antes de finalizar el registro (es difernte a la fecha del curso, 1 o 2 dias antes)
+	[21:00, 26/5/2020] Jaime Sandoval: puede decir que ya no 1 dia antes de finalizar el registroç
+	[21:00, 26/5/2020] Jaime Sandoval: luego se le cobra y se jodio
+	[21:01, 26/5/2020] Jaime Sandoval: los amarillos los deja pendientes 1 dia, para que el cuate haga mercadeo y trate de convencerlos
+	[21:01, 26/5/2020] Jaime Sandoval: si dice que no se cierra
+	[21:01, 26/5/2020] Jaime Sandoval: me explico?
+	[21:01, 26/5/2020] Jaime Sandoval: es solo de referencia de cuantos estan inscritos
+	[21:02, 26/5/2020] Jaime Sandoval: no es ni lugar, ni posicion de cuando se inscribio
+	[21:02, 26/5/2020] Jaime Sandoval: es solo conteo
+	[21:02, 26/5/2020] Jaime Sandoval: me seguis?
+	[21:02, 26/5/2020] Jaime Sandoval: hasta ahi esta de lo mas sencillo
+	[21:02, 26/5/2020] Jaime Sandoval: lo medio complicado
+	[21:03, 26/5/2020] Luis Pirir: Si, te voy siguiendo
+	[21:03, 26/5/2020] Jaime Sandoval: el instructor dice que el curso cuesta 700$ (o Q, no importa)
+	[21:03, 26/5/2020] Jaime Sandoval: y que su minimo son 10 y su maximo 100
+	[21:03, 26/5/2020] Jaime Sandoval: quiere decir que inicialmente (con 10 minimo) el curso cuesta 70
+	[21:04, 26/5/2020] Jaime Sandoval: si se inscriben 10 mas  cuesta 35
+	[21:04, 26/5/2020] Jaime Sandoval: si llegan a los 100 cuesta 7
+	[21:04, 26/5/2020] Jaime Sandoval: digamos que al final del registro llegaron a 50
+	[21:05, 26/5/2020] Jaime Sandoval: ese dia del cierre se les manda un correo diciendoles que el costo es 14
+	[21:05, 26/5/2020] Luis Pirir: mmmm, te voy cachando
+	[21:05, 26/5/2020] Jaime Sandoval: y se les cobra 14
+	[21:05, 26/5/2020] Jaime Sandoval: si sale rechazado un cobro, ahi sigue costando 14
+	[21:05, 26/5/2020] Jaime Sandoval: y el costo se le quita al instructor
+	[21:05, 26/5/2020] Jaime Sandoval: eso no es dificil pero requier mucho control
+	[21:06, 26/5/2020] Jaime Sandoval: y quiere que se cobre con tarjeta
+	[21:06, 26/5/2020] Jaime Sandoval: automatico
+	[21:06, 26/5/2020] Luis Pirir: mmmm, tienen una pasarela de pago habilitada ?
+	[21:06, 26/5/2020] Luis Pirir: No me vayas a decir Paypal
+	[21:07, 26/5/2020] Jaime Sandoval: algo que se me olvido, del costo y cantidad minima y maxima se le dice que % es para el sitio y que % para el que vende el curso
+	[21:07, 26/5/2020] Jaime Sandoval: % para el sitio (nuestro)
+	[21:07, 26/5/2020] Luis Pirir: Ese será su modelo de negocios
+	[21:07, 26/5/2020] Luis Pirir: jajajaja, esa voz me agrada
+	[21:07, 26/5/2020] Jaime Sandoval: se va a hablar con visanet, bac y con esta que te dan un link
+	[21:08, 26/5/2020] Jaime Sandoval: exacto, lo hacemos y nos quedamos ganando a futuro
+	[21:08, 26/5/2020] Jaime Sandoval: por eso te he dicho que ando buscando negocitos que den ingresos
+	[21:08, 26/5/2020] Luis Pirir: va, te entendí que es una especie de reservaciones
+	[21:08, 26/5/2020] Jaime Sandoval: de a un monton ya la hacemos
+	[21:08, 26/5/2020] Luis Pirir: sino se llega a la cuota, el instructor paga, el derecho de piso
+	[21:08, 26/5/2020] Luis Pirir: el porcentaje aún no se defina
+	[21:09, 26/5/2020] Luis Pirir: Siii, esa es la idea
+	[21:09, 26/5/2020] Jaime Sandoval: si no llega al minimo se cambia de fecha
+	[21:09, 26/5/2020] Jaime Sandoval: por ese en la descripcion del curso se pone el disclaimer
+	[21:09, 26/5/2020] Jaime Sandoval: se avisa que si no llegan al minimo no se da
+	[21:09, 26/5/2020] Jaime Sandoval: con el minimo o maximo el instructor gana lo mismo
+	[21:10, 26/5/2020] Jaime Sandoval: es decir el dice que el curso cuesta 700 - porcentajes
+	[21:10, 26/5/2020] Jaime Sandoval: si lo dio a 10 minimo, el sigue recibiendo 700 - porcentaje
+	[21:10, 26/5/2020] Jaime Sandoval: quien pago mas es el cliente
+	[21:10, 26/5/2020] Jaime Sandoval: si llega al maximo (100), el recibe lo mismo
+	[21:11, 26/5/2020] Jaime Sandoval: los clientes ganan porque lo consiguieron barato
+	[21:11, 26/5/2020] Jaime Sandoval: el % si lo ha definido mi cuate, pero no me acuerdo si me dijo 20% (10% y 10%) o si me dijo que 20% es para el directamente
+	[21:11, 26/5/2020] Jaime Sandoval: el se encarga de vender y buscar cursos
+	[21:11, 26/5/2020] Jaime Sandoval: el de eso vive
+	[21:12, 26/5/2020] Jaime Sandoval: nosotros solo le damos mantenimiento
+	[21:12, 26/5/2020] Jaime Sandoval: y el % de cobro por tarjeta que cae sobre el sitio
+	[21:12, 26/5/2020] Jaime Sandoval: esos detalles se legalizan
+	[21:12, 26/5/2020] Luis Pirir: nitido
+	[21:12, 26/5/2020] Luis Pirir: de una lo redireccionamos
+	[21:12, 26/5/2020] Luis Pirir: jajajaja
+	[21:13, 26/5/2020] Jaime Sandoval: te das cuenta que es de lo mas sencillo
+	[21:13, 26/5/2020] Jaime Sandoval: solo 2 cosas complicadas
+	[21:13, 26/5/2020] Jaime Sandoval: (miralo para vender cualquier otra cosa, jejjeje)
+	[21:13, 26/5/2020] Jaime Sandoval: (amarralo a un crm para llamar a clientes)
+	[21:13, 26/5/2020] Luis Pirir: ahora estoy revisando el diagrama con lo que me explicaste
+	[21:13, 26/5/2020] Jaime Sandoval: es decir despues se le puede sacar mas provecho
+	[21:14, 26/5/2020] Jaime Sandoval: el dice que le recomendaron que no fuera en movil
+	[21:14, 26/5/2020] Jaime Sandoval: pero yo digo que de una hagamos ambas
+	[21:14, 26/5/2020] Jaime Sandoval: 1ro para tener una app publicada
+	[21:14, 26/5/2020] Jaime Sandoval: 2do para mostrar a los clientes
+	[21:15, 26/5/2020] Jaime Sandoval: 3ro para darle el toque extra al sitio
+	[21:15, 26/5/2020] Jaime Sandoval: que te disparas? son 3 cosas diferentes
+	[21:15, 26/5/2020] Jaime Sandoval: back, front y movil
+	[21:16, 26/5/2020] Jaime Sandoval: pongo un servidor para el back
+	[21:16, 26/5/2020] Jaime Sandoval: que lo podemos llevar entre ambos
+	[21:17, 26/5/2020] Jaime Sandoval: nodejs (typescript), angular, flutter?
+	[21:18, 26/5/2020] Luis Pirir: me parece
+	[21:18, 26/5/2020] Luis Pirir: me hecho el backend
+	[21:18, 26/5/2020] Luis Pirir: mongodb ?
+	[21:18, 26/5/2020] Jaime Sandoval: si, mongo db
+	[21:19, 26/5/2020] Jaime Sandoval: hago un plan mañana y el detalle de las pantallas y asi te da tiempo de pensarlo
+	[21:20, 26/5/2020] Jaime Sandoval: te parece?
+	[21:20, 26/5/2020] Luis Pirir: Me parece
+	[21:20, 26/5/2020] Luis Pirir: Pero, le entro
+	[21:20, 26/5/2020] Jaime Sandoval: es decir yo te estoy diciendo que si le entro
+	[21:20, 26/5/2020] Luis Pirir: MEAN y flutter
+	[21:20, 26/5/2020] Luis Pirir: Entremosle entonces
+	[21:20, 26/5/2020] Luis Pirir: Mandame las pantallas, para definir los documentos a crear en mongo
+	[21:20, 26/5/2020] Jaime Sandoval: va y yo te voy alivianando aunque sea con pocos porque tampoco es que me entre dineral
+	[21:21, 26/5/2020] Jaime Sandoval: vos creas la db antes? no te vas code first?
+	[21:21, 26/5/2020] Luis Pirir: ahorita me ayudas bastante con Q1000, jajajaja
+	[21:21, 26/5/2020] Luis Pirir: mmmm, los modelos en typescript
+	[21:21, 26/5/2020] Jaime Sandoval: yo hago el modelo en node directamente
+	[21:21, 26/5/2020] Luis Pirir: y usar migrations
+	[21:21, 26/5/2020] Luis Pirir: siii, pero necesitas conocer el objeto a crear
+	[21:21, 26/5/2020] Jaime Sandoval: desde ahi ya no tenes ni que migrar
+	[21:21, 26/5/2020] Jaime Sandoval: la primera vez que agregas un registro crea la estructura
+	[21:22, 26/5/2020] Jaime Sandoval: si, eso si
+	[21:22, 26/5/2020] Jaime Sandoval: por eso se hace el modelo, jejeje
+	[21:22, 26/5/2020] Jaime Sandoval: ok, dejame ver entonces porque hasta la fecha ya me preocupe, NO ME HAN DEPOSITADO
+	[21:22, 26/5/2020] Jaime Sandoval: jejejejje
+	[21:22, 26/5/2020] Jaime Sandoval: pero el viernes a mas tardar
+	[21:22, 26/5/2020] Jaime Sandoval: igual, solo veo cuanto tengo y te digo
+	[21:23, 26/5/2020] Luis Pirir: jajajajaja
+	[21:23, 26/5/2020] Luis Pirir: esta jodido va vos
+	[21:23, 26/5/2020] Jaime Sandoval: ahhh, solo dejame hablar con el cuate mañana para asegurar que no se nos haga atras
+	[21:23, 26/5/2020] Jaime Sandoval: sin el no funciona
+	[21:23, 26/5/2020] Jaime Sandoval: porque el tiene contactos y sabe que hacer
+	[21:24, 26/5/2020] Luis Pirir: siiii
+	[21:24, 26/5/2020] Luis Pirir: jajajaja
+	[21:24, 26/5/2020] Jaime Sandoval: si vos, y mi proy va de mal en peor, le estan poniendo tropiezos a mi jefa
+	[21:24, 26/5/2020] Jaime Sandoval: pero eso es por mula
+	[21:24, 26/5/2020] Jaime Sandoval: yo me pelie con ella porque no hace caso, no sigue las recomendaciones que le damos
+	[21:25, 26/5/2020] Jaime Sandoval: a mi nunca me pagan a tiempo, pero lo que si es que nunca me han dejado de pagar
+	[21:25, 26/5/2020] Jaime Sandoval: una cosa mas, mañana hablo con el
+	[21:26, 26/5/2020] Jaime Sandoval: cuanto tiempo nos llevamos?ç
+	[21:26, 26/5/2020] Jaime Sandoval: en back y front sin movil
+	[21:26, 26/5/2020] Jaime Sandoval: y movil la sacamos luego
+	[21:26, 26/5/2020] Luis Pirir: mmmm, diria que maximo 3 meses
+	[21:26, 26/5/2020] Jaime Sandoval: nombre, te pelas
+	[21:26, 26/5/2020] Jaime Sandoval: yo 1 mes le iba a decir
+	[21:27, 26/5/2020] Luis Pirir: jajajaja
+	[21:27, 26/5/2020] Jaime Sandoval: este si sale con correos
+	[21:27, 26/5/2020] Luis Pirir: te iba decir mes y medio
+	[21:27, 26/5/2020] Jaime Sandoval: hay que probar antes con amazon esa porqueria
+	[21:28, 26/5/2020] Luis Pirir: mmmm, sendgrid
+	[21:28, 26/5/2020] Jaime Sandoval: si, mañana lo pruebo con soft502
+	[21:29, 26/5/2020] Jaime Sandoval: es salida y entrada, verdad?
+	[21:30, 26/5/2020] Luis Pirir: S[i
+	[21:41, 26/5/2020] Jaime Sandoval: Se me olvido
+	[21:41, 26/5/2020] Jaime Sandoval: No nos metemos al evento
+	[21:41, 26/5/2020] Jaime Sandoval: Ellos oo hacen en xoon
+	[21:41, 26/5/2020] Jaime Sandoval: Teams, skype o lo que sea
+	[21:42, 26/5/2020] Luis Pirir: mmmm, por eso te dije
+	[21:42, 26/5/2020] Luis Pirir: es solo para manejo de reservas el sistema
+	[21:42, 26/5/2020] Jaime Sandoval: Sip
+	[21:42, 26/5/2020] Luis Pirir: a el catedratico se le da plata al finalizar
+	[21:42, 26/5/2020] Jaime Sandoval: Luego pensamos si ofrecemos dentro con algo
+	[21:42, 26/5/2020] Jaime Sandoval: Sip, igual mi cuate esta encima
+	[21:42, 26/5/2020] Jaime Sandoval: Porque el evalua
+	[21:43, 26/5/2020] Luis Pirir: nitido'
+	[21:43, 26/5/2020] Jaime Sandoval: Quien da la cara es el vendedor
+	[21:43, 26/5/2020] Jaime Sandoval: Si hacemos algo para vc me puede servir en li de los colegios
+	[21:46, 26/5/2020] Luis Pirir: S
+	[21:47, 26/5/2020] Luis Pirir: se usa el componente
