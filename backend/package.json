@@ -33,7 +33,7 @@
     "dotenv": "^8.2.0",
     "express-handlebars": "^4.0.3",
     "express3-handlebars": "^0.5.2",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "nodemon": "^2.0.3",
     "npm-check-updates": "^4.1.2"
   }
